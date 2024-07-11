@@ -2,9 +2,9 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Поиск");
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:search.page",
-	"clear",
-	Array(
+	"bitrix:search.page", 
+	"clear", 
+	array(
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"AJAX_OPTION_HISTORY" => "N",
@@ -37,7 +37,36 @@ $APPLICATION->SetTitle("Поиск");
 		"USE_LANGUAGE_GUESS" => "N",
 		"USE_SUGGEST" => "N",
 		"USE_TITLE_RANK" => "N",
-		"arrFILTER" => array(0=>"iblock_rew",),
-		"arrFILTER_iblock_rew" => array(0=>"5",)
-	)
+		"arrFILTER" => array(
+			0 => "main",
+			1 => "forum",
+			2 => "iblock_products",
+			3 => "iblock_vacancies",
+			4 => "iblock_rew",
+			5 => "iblock_rest_entity",
+			6 => "blog",
+			7 => "microblog",
+		),
+		"arrFILTER_iblock_rew" => array(
+			0 => "5",
+		),
+		"arrFILTER_main" => array(
+		),
+		"arrFILTER_forum" => array(
+			0 => "all",
+		),
+		"arrFILTER_iblock_products" => array(
+			0 => "all",
+		),
+		"arrFILTER_iblock_vacancies" => array(
+			0 => "all",
+		),
+		"arrFILTER_iblock_rest_entity" => array(
+			0 => "all",
+		),
+		"arrFILTER_blog" => array(
+			0 => "all",
+		)
+	),
+	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
