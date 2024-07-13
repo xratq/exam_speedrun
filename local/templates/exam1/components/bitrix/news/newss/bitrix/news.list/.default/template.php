@@ -27,8 +27,12 @@ $this->setFrameMode(true);
 				<span class="review-block-name"><a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a></span>
 				<span class="review-block-description">
 				<?=$arItem["DISPLAY_ACTIVE_FROM"]?><?=GetMessage("YEAR")?>
+				<?if (!empty($arItem["DISPLAY_PROPERTIES"]["POSITION"]["DISPLAY_VALUE"])):?>
 				<?=$arItem["DISPLAY_PROPERTIES"]["POSITION"]["DISPLAY_VALUE"]?>
+				<?endif;?>
+				<?if (!empty($arItem["DISPLAY_PROPERTIES"]["COMPANY"]["DISPLAY_VALUE"])):?>
 				<?=$arItem["DISPLAY_PROPERTIES"]["COMPANY"]["DISPLAY_VALUE"]?>
+				<?endif;?>
 				</span>
 			</div>
 			<div class="review-text-cont">

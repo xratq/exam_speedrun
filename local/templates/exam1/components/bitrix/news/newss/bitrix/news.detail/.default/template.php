@@ -20,8 +20,12 @@ $this->setFrameMode(true);
 			</div>
 			<div class="review-autor">
 				<?=$arResult["NAME"]?>
+				<?if (!empty($arItem["DISPLAY_PROPERTIES"]["POSITION"]["DISPLAY_VALUE"])):?>
 				<?=$arResult["DISPLAY_PROPERTIES"]["POSITION"]["DISPLAY_VALUE"]?>
+				<?endif;?>
+				<?if (!empty($arItem["DISPLAY_PROPERTIES"]["COMPANY"]["DISPLAY_VALUE"])):?>
 				<?=$arResult["DISPLAY_PROPERTIES"]["COMPANY"]["DISPLAY_VALUE"]?>
+				<?endif;?>
 			</div>
 		</div>
 		<div style="clear: both;" class="review-img-wrap">
@@ -37,7 +41,7 @@ $this->setFrameMode(true);
 	
 		<?$file_values = $arResult["DISPLAY_PROPERTIES"]["FILE"]["FILE_VALUE"]?>
 		<?if ($file_values != 0): ?>
-			<p>Документы:</p>
+			<p><?=GetMessage("DOCUMENTS")?></p>
 
 		<?if (!is_array($file_values) || !empty($file_values["SRC"])){
 			$file_values = array($file_values);
