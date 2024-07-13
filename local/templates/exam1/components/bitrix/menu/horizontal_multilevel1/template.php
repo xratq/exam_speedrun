@@ -7,7 +7,7 @@
                     <a href="" class="btn-menu btn-toggle"></a>
                     <div class="menu popup-block">
 <ul>
-<li class="main-page"><a href="/">Главная</a>
+<li class="main-page"><a href="/"><?=GetMessage("MAIN_PAGE")?></a>
 <?
 $previousLevel = 0;
 foreach($arResult as $arItem):?>
